@@ -1,4 +1,4 @@
-namespace audiolib
+namespace AudioLib
 
 module Say =
     let hello name =
