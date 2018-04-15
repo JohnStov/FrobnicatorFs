@@ -1,5 +1,7 @@
 source https://api.nuget.org/v3/index.json
 
+nuget fscheck
+nuget fscheck.xunit
 nuget FSharp.Core
 clitool dotnet-xunit 2.3.1
 nuget Microsoft.NET.Test.Sdk 15.6.0

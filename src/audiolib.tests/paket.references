@@ -3,3 +3,5 @@ xunit
 xunit.runner.visualstudio
 dotnet-xunit
 FSharp.Core
+fscheck
+fscheck.xunit
