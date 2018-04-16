@@ -1,6 +1,7 @@
 source https://api.nuget.org/v3/index.json
 
 nuget expecto
+nuget expecto.fscheck
 nuget fscheck
 nuget fscheck.xunit
 nuget FSharp.Core
