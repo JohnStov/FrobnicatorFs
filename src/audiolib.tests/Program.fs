@@ -59,6 +59,12 @@ let tests =
         testPropertyWithConfig config "Triangle output is always above -1" (fun frequency ->
             tri1sec frequency |> Seq.min >= -1.0
         )
+        test "Noise is always below 1" {
+            Expect.isTrue (noise |> Seq.take 10000 |> Seq.max <= 1.0) "Noise exceeds 1.0"
+        }
+        test "Noise is always above -1" {
+            Expect.isTrue (noise |> Seq.take 10000 |> Seq.min >= -1.0) "Noise is less than -1.0"
+        }
         testPropertyWithConfig config "1 second of f Hz contains approximately 2 * f zero crossings" (fun frequency ->
             let crossings = sine1sec frequency |> countZeroCrossings 
             let expected = int (frequency * 2.0)

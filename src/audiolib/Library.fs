@@ -26,4 +26,8 @@ module Generator =
             else
                 (2.0 * (2.0 - (theta / Math.PI))) - 1.0
         generate triFunc
+
+    let noise =
+        let rand = Random()
+        Seq.unfold (fun _ -> Some((rand.NextDouble() * 2.0) - 1.0, ())) ()
                 
