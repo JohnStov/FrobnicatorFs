@@ -3,7 +3,7 @@ open AudioLib.Generator
 open FsCheck
 
 let gen1sec fn frequency =
-    fn 44100.0 frequency |> Seq.take 44100
+    fn 44100.0 (constant frequency) |> Seq.take 44100
 
 let sine1sec = gen1sec sine
 
@@ -78,6 +78,9 @@ let tests =
             Expect.equal (sine1sec 0.0 |> Seq.max) 0.0 "Max is not 0.0"
             Expect.equal (sine1sec 0.0 |> Seq.min) 0.0 "Min is not 0.0"
         }
+        testPropertyWithConfig config "Constant always yields the same value" (fun value ->
+            Expect.allEqual (constant value |> Seq.take 10000) value "Constant is not constant"
+        )
     ]
 
 [<EntryPoint>] 
