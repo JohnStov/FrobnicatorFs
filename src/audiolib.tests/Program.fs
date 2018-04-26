@@ -79,7 +79,7 @@ let tests =
             Expect.equal (sine1sec 0.0 |> Seq.min) 0.0 "Min is not 0.0"
         }
         testPropertyWithConfig config "Constant always yields the same value" (fun value ->
-            Expect.allEqual (constant value |> Seq.take 10000) value "Constant is not constant"
+            Expect.allEqual (constant value |> Seq.take 1000) value "Constant is not constant"
         )
     ]
 
