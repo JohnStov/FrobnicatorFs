@@ -5,7 +5,9 @@
     <RuntimeFrameworkVersion>2.0.6</RuntimeFrameworkVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="MidiMessages.fs" />
     <Compile Include="Generator.fs" />
+    <Compile Include="NAudioBinding.fs" />
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>
